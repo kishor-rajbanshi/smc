@@ -30,11 +30,11 @@ IF "%ERRORLEVEL%"=="0" (
         FOR /F "delims=" %%A IN ('where.exe %2') DO (
             CD /D "%%~dpA"
         )
-		START /B %2
+		START /WAIT RunHiddenConsole %2
 	)
 	IF "%2"=="mysql" START /WAIT RunHiddenConsole mysqld --console
 	IF "%2"=="php-cgi" (
-		START /B %2 -b 127.0.0.1:9000
+		START /WAIT RunHiddenConsole %2 -b 127.0.0.1:9000
 		ECHO  [33musing host:127.0.0.1, port:9000[0m
 	)
 	ECHO [92m "%2" started. [0m
@@ -75,11 +75,11 @@ IF "%ERRORLEVEL%"=="0" (
 		FOR /F "delims=" %%A IN ('where.exe %2') DO (
             CD /D "%%~dpA"
         )
-		START /B %2
+		START /WAIT RunHiddenConsole %2
 	)
 	IF "%2"=="mysql" START /WAIT RunHiddenConsole mysqld --console
 	IF "%2"=="php-cgi" (
-		START /B %2 -b 127.0.0.1:9000
+		START /WAIT RunHiddenConsole %2 -b 127.0.0.1:9000
 		ECHO  [33musing host:127.0.0.1, port:9000[0m
 	)
 	ECHO [92m "%2" started. [0m
