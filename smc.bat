@@ -9,11 +9,15 @@ ECHO.
 ECHO [101;93m Initializing... [0m
 ECHO.
 
+IF "%1" == "version" GOTO :VERSION
 IF "%1" == "start" GOTO :START
 IF "%1" == "stop" GOTO :STOP
 IF "%1" == "restart" GOTO :RESTART
-
 GOTO ABOUT
+
+:VERSION
+ECHO [92mSMC[0m version [33m1.0.2[0m 9-3-2023
+GOTO END
 
 :START
 IF "%2"=="" GOTO END
