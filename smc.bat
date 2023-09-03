@@ -19,7 +19,7 @@ GOTO ABOUT
 IF "%2"=="" GOTO END
 IF NOT "%2"=="nginx" IF NOT "%2"=="mysql" IF NOT "%2"=="php-cgi" (
 	ECHO [41m %2 [0m not found.
-	GOTO ABOUT
+	GOTO END
 )
 TASKLIST /FI "IMAGENAME eq %2.exe" | find /I /N "%2.exe" > NUL
 IF "%ERRORLEVEL%"=="0" (
